@@ -1,0 +1,218 @@
+:root {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    --primary-color: #00ff00;
+    --secondary-color: #2d8600;
+    --tertiary-color: #c70404;
+    --background-color: #113101;
+    scrollbar-color: var(--primary-color) var(--secondary-color);
+    font-size: clamp(18px, 3vw, 30px);
+    cursor: url('./cursor.png'), pointer
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: lowercase;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+.imageCard {
+    display: flex;
+}
+
+.imageCard .content {
+    margin-left: 10px;
+}
+
+.activetab {
+    color: var(--secondary-color);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-right: 3px solid var(--primary-color);
+    border-left: 3px solid var(--primary-color);
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--background-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 3px 6px 3px 6px;
+}
+
+nav {
+    width: 60%;
+    border-bottom: 3px solid var(--primary-color);
+    padding-left: 5%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+div.retro-container {
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    padding: 0.5rem;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.333) 50%, #000 50%);
+    mask-size: 100% 2px;
+    text-shadow: 0 0 0.5rem;
+}
+
+header,
+footer {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+main {
+    overflow: hidden;
+}
+
+section {
+    height: 100%;
+    overflow: hidden auto;
+}
+
+@keyframes crtAnimation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 10000%;
+    }
+}
+
+.old-crt-monitor {
+    box-shadow: inset #3dad3d -20px 20px 1.5rem 0;
+    background-image: linear-gradient(0deg, #0000 10%, #fff1 90%, #0000 100%);
+    animation: crtAnimation 100s linear infinite;
+    background-size: 100% 80%;
+}
+
+ol {
+    display: flex;
+}
+
+ol li {
+    display: flex;
+    margin: 0 20px;
+}
+
+ul li::before {
+        content: "+";
+        padding-right: 5px;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.typewriter {
+    margin-left: 150px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    /* Blinking cursor */
+    width: 70%;
+    text-align: left;
+    /* Full width of the container */
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--primary-color);
+    }
+}
+
+img {
+    margin-left: 100px;
+    border-radius: 10px;
+    -webkit-filter: hue-rotate(90deg); /* Safari 6.0 - 9.0 */
+    filter: hue-rotate(90deg);
+    transition: filter 0.5s, -webkit-filter 0.5s;
+}
+
+img:hover {
+    -webkit-filter: hue-rotate(0deg); /* Safari 6.0 - 9.0 */
+    filter: hue-rotate(0deg);
+}
+
+.blink {
+    border-right: 8px solid var(--primary-color);
+    display: inline-block;
+    height: 20px;
+    animation: blink 0.7s step-end infinite;
+}
+
+footer a {
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    border: 3px solid;
+    text-align: center;
+}
+
+.download {
+    width: 280px;
+    margin-left: 100px;
+    border: 3px solid;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.alert {
+    animation: blink-bg 1s ease-out infinite;
+}
+
+@keyframes blink-bg {
+    0%, 60% {
+        text-shadow: 0 0 10.5rem;
+        color: var(--primary-color);
+    }
+    70%, 100% {
+        text-shadow: 0 0 20.5rem;
+        color: var(--tertiary-color);
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-color);
+    transition: fill 0.5s;
+}
+
+.icon:hover {
+    fill: var(--secondary-color);
+}
